@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.tasks;
+import models.Task;
 
 /**
  * Servlet implementation class NewServlet
@@ -33,9 +33,9 @@ public class New extends HttpServlet {
         request.setAttribute("_token", request.getSession().getId());
 
         // おまじないとしてのインスタンスを生成
-        request.setAttribute("tasks", new tasks());
+        request.setAttribute("tasks", new Task());
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/New.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/new.jsp");
         rd.forward(request, response);
      }
 }
